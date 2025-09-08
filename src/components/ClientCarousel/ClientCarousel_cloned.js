@@ -66,7 +66,12 @@ const ClientCarousel = ({ pageTitle, dark }) => {
                         {titleSix}
                         <span className="sec-title-three__tagline__right-border"></span>
                     </h6>
-				) : null
+					<h3 className="sec-title-three__title">{title}</h3>                  
+				    <h5 className="client-carousel--six__title"> sec-title-three__tagline
+                       <span className="client-carousel--six__title__border"></span>
+                        <span className="client-carousel--six__title__bg">{titleSix}</span>
+                        <span className="client-carousel--six__title__border"></span>
+                    </h5> : null
 			}
             <Container >
                 {
