@@ -1,11 +1,10 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import context from "./context";
 import { usePathname } from "next/navigation";
 
 const ThemeProvider = ({ children }) => {
   const [isExpanded, setIsExpanded] = useState(false);
-
   const [menuStatus, setMenuStatus] = useState(false);
   const [openSearch, setOpenSearch] = useState(false);
   const [openMegaMenu, setOpenMegaMenu] = useState(false);
@@ -13,57 +12,50 @@ const ThemeProvider = ({ children }) => {
 
   const pathname = usePathname();
 
-  const toggleMenu = (value) => {
-    setMenuStatus((preMenuStatus) =>
-      value === undefined
-        ? !preMenuStatus
-        : typeof value === "boolean"
-          ? value
-          : !!value
+  // --- Pure state togglers (no side effects) ---
+  const toggleMenu = useCallback((value) => {
+    setMenuStatus((prev) =>
+      value === undefined ? !prev : typeof value === "boolean" ? value : !!value
     );
-  };
-  const toggleMegaMenu = (value) => {
+  }, []);
 
-    setOpenMegaMenu((preMenuStatus) =>
-      value === undefined
-        ? !preMenuStatus
-        : typeof value === "boolean"
-          ? value
-          : !!value
+  const toggleMegaMenu = useCallback((value) => {
+    setOpenMegaMenu((prev) =>
+      value === undefined ? !prev : typeof value === "boolean" ? value : !!value
     );
+  }, []);
 
-    document.body.classList.toggle("megamenu-popup-active", !openMegaMenu);
-  };
+  const toggleSearch = useCallback(() => {
+    setOpenSearch((prev) => !prev);
+  }, []);
 
+  const toggleSidebar = useCallback(() => {
+    setOpenSidebar((prev) => !prev);
+  }, []);
 
-  const toggleSearch = () => {
-    setOpenSearch((preSearch) => !preSearch);
-  };
-  const toggleSidebar = () => {
-    setOpenSidebar((preState) => !preState);
-    document.body.classList.toggle("locked", !openSidebar);
-  };
+  const handleToggle = useCallback(() => {
+    setIsExpanded((prev) => !prev);
+  }, []);
 
-  const handleToggle = () => {
-    setIsExpanded(!isExpanded);
-    document.body.classList.toggle("locked", !isExpanded);
-  };
- /* useEffect(() => {
-   console.log(lang);
-}, [lang]);*/
+  // --- Effects for syncing body classes ---
+  useEffect(() => {
+    document.body.classList.toggle("megamenu-popup-active", openMegaMenu);
+  }, [openMegaMenu]);
 
-   useEffect(() => {
-	toggleMegaMenu();
-}, [toggleMegaMenu]);
+  useEffect(() => {
+    document.body.classList.toggle("locked", isExpanded || openSidebar);
+  }, [isExpanded, openSidebar]);
 
-useEffect(() => {  
+  // --- Reset on route change ---
+  useEffect(() => {
     toggleMenu(false);
     setIsExpanded(false);
     setOpenMegaMenu(false);
+    setOpenSidebar(false);
+    setOpenSearch(false);
 
-    toggleMegaMenu(false);
-    document.body.classList.remove("megamenu-popup-active");
-  }, [pathname]);
+    document.body.classList.remove("megamenu-popup-active", "locked");
+  }, [pathname, toggleMenu]);
 
   const value = {
     handleToggle,
@@ -78,8 +70,9 @@ useEffect(() => {
     openSidebar,
     setOpenSidebar,
     toggleSidebar,
-    setOpenMegaMenu
+    setOpenMegaMenu,
   };
+
   return <context.Provider value={value}>{children}</context.Provider>;
 };
 
