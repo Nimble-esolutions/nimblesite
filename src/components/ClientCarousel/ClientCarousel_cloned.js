@@ -69,12 +69,13 @@ const ClientCarousel = ({ pageTitle, dark }) => {
 			}
             <Container >
                 {
-                    pageTitle === "homeFive" ?
+                    pageTitle === "homeFive" ? (
                         <h5 className="client-carousel--five__title">
                             <span className="client-carousel--five__title__border"></span>
                             <span className="client-carousel--five__title__bg">{titleSix}</span>
                             <span className="client-carousel--five__title__border"></span>
-                        </h5> : null
+                        </h5> 
+					) : null
                 }
                 <TinySlider settings={settings} className="client-carousel__one">
                     {
