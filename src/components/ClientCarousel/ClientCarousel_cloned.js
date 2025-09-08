@@ -60,28 +60,21 @@ const ClientCarousel = ({ pageTitle, dark }) => {
     return (
         <div className={`client-carousel ${pageTitle === "homeTwo" ? "client-carousel--two" : pageTitle === "homeFour" ? "client-carousel--three" : pageTitle === "homeSix" ? "client-carousel--six" : pageTitle === "homeSeven" ? "client-carousel--six" : pageTitle === "teamDetails" ? "client-carousel--no-border" : pageTitle === "homeThree" ? "" : pageTitle === "homeFive" ? "client-carousel--five" : "no-border"} `}>
             {
-                pageTitle === "homeSix" || pageTitle === "homeSeven" ?(
-                   <h6 className="sec-title-three__tagline">
-                        <span className="sec-title-three__tagline__left-border"></span>
-                        {titleSix}
-                        <span className="sec-title-three__tagline__right-border"></span>
-                    </h6>
-					<h3 className="sec-title-three__title">{title}</h3>                  
-				    <h5 className="client-carousel--six__title"> sec-title-three__tagline
-                       <span className="client-carousel--six__title__border"></span>
+                pageTitle === "homeSix" || pageTitle === "homeSeven" ?
+                    <h5 className="client-carousel--six__title">
+                        <span className="client-carousel--six__title__border"></span>
                         <span className="client-carousel--six__title__bg">{titleSix}</span>
                         <span className="client-carousel--six__title__border"></span>
                     </h5> : null
-			}
+            }
             <Container >
                 {
-                    pageTitle === "homeFive" ? (
+                    pageTitle === "homeFive" ?
                         <h5 className="client-carousel--five__title">
                             <span className="client-carousel--five__title__border"></span>
                             <span className="client-carousel--five__title__bg">{titleSix}</span>
                             <span className="client-carousel--five__title__border"></span>
-                        </h5> 
-					) : null
+                        </h5> : null
                 }
                 <TinySlider settings={settings} className="client-carousel__one">
                     {
