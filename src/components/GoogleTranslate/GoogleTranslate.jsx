@@ -36,7 +36,7 @@ const GoogleTranslate = ({ lang }) => {
       const changeLanguage = (value) => {
         setTimeout(() => {
           const element = document.querySelector(".goog-te-combo");
-          console.log(element);
+          console.log(lang);
           if (element) {
             element.value = value;
             element.dispatchEvent(new Event("change"));
@@ -53,7 +53,7 @@ const GoogleTranslate = ({ lang }) => {
 
 
     }
-  }, [isScriptLoaded]);
+  }, [isScriptLoaded, lang]);
 
   return (
     <div>
