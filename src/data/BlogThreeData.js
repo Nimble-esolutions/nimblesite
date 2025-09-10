@@ -13,7 +13,7 @@ const blogThreeData = {
     {
       id: 1,
       image: image1,
-      href: "blog-details-right",
+      href: "blog-details-1",
       authorImage: authorImage,
 
       date: "<span>--</span>2 Jan 25",
@@ -28,7 +28,7 @@ const blogThreeData = {
     {
       id: 2,
       image: image2,
-      href: "blog-details-right",
+      href: "blog-details-2",
       authorImage: authorImage,
       date: "<span>15</span>Jan",
       year: "2025",
@@ -43,7 +43,7 @@ const blogThreeData = {
     {
       id: 3,
       image: image3,
-      href: "blog-details-right",
+      href: "blog-details-3",
       authorImage: authorImage,
       date: "<span>23</span>July",
       year: "2025",
@@ -57,7 +57,7 @@ const blogThreeData = {
     {
       id: 4,
       image: image4,
-      href: "blog-details-right",
+      href: "blog-details-4",
       authorImage: authorImage,
       date: "<span>15</span>Jun",
       year: "2023",
@@ -71,7 +71,7 @@ const blogThreeData = {
     {
       id: 5,
       image: image5,
-      href: "blog-details-right",
+      href: "blog-details-5",
       authorImage: authorImage,
       date: "<span>19</span>Jun",
       year: "2023",
@@ -85,7 +85,7 @@ const blogThreeData = {
     {
       id: 6,
       image: image6,
-      href: "blog-details-right",
+      href: "blog-details-6",
       authorImage: authorImage,
       date: "<span>29</span>Jun",
       year: "2023",

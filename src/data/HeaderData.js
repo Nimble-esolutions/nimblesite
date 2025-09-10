@@ -93,7 +93,7 @@ const navItems = [
   },
   {
     id: 2,
-    name: "Pages",
+    name: "Portfolio",
     href: "#",
     subNavItems: [
       {
@@ -164,53 +164,17 @@ const navItems = [
     name: "Services",
     href: "#",
     subNavItems: [
-      { id: 1, name: "Services One", href: "/services" },
-      { id: 2, name: "Services One Carousel", href: "/services-carousel" },
-      { id: 3, name: "Services Two", href: "/services-two" },
-      { id: 4, name: "Services Two Carousel", href: "/services-two-carousel" },
-      { id: 5, name: "Business of Growth", href: "/business-growth" },
-      { id: 6, name: "Solution to Business", href: "/business-solution" },
-      { id: 7, name: "Markting of Solution", href: "/marketing-solution" },
-      { id: 8, name: "Technology Services", href: "/technology-services" },
-      { id: 9, name: "Marketing Business", href: "/business-marketing" },
-      { id: 10, name: "Support of Business", href: "/business-support" },
+      
+      { id: 1, name: "AI Solutions", href: "/services-two-carousel" },
+      { id: 2, name: "Customized Development", href: "/business-growth" },
+      { id: 3, name: "Product Enhancement", href: "/business-solution" },
+      { id: 4, name: "E-Learning Solutions", href: "/marketing-solution" },
+      { id: 5, name: "Website Development", href: "/technology-services" },
+      { id: 6, name: "", href: "/business-marketing" },
+      { id: 7, name: "", href: "/business-support" },
     ],
   },
 
-  {
-    id: 4,
-    name: "Shop",
-    href: "#",
-    subNavItems: [
-      {
-        id: 1,
-        name: "Products",
-        href: "#",
-        dropdown: true,
-        subItems: [
-          {
-            id: 1,
-            name: "No Sidebar",
-            href: "/products",
-          },
-          {
-            id: 2,
-            name: "Left Sidebar",
-            href: "/products-left",
-          },
-          {
-            id: 3,
-            name: "Right Sidebar",
-            href: "/products-right",
-          },
-        ],
-      },
-      { id: 2, name: "Products Carousel", href: "/products-carousel" },
-      { id: 3, name: "Product Details", href: "/product-details" },
-      { id: 4, name: "Cart", href: "/cart" },
-      { id: 5, name: "Checkout", href: "/checkout" },
-    ],
-  },
   {
     id: 5,
     name: "News",

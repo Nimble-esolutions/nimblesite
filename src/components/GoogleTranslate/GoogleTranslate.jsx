@@ -53,7 +53,7 @@ const GoogleTranslate = ({ lang }) => {
 
 
     }
-  }, [isScriptLoaded]);
+  },  [isScriptLoaded, lang]); // ✅ include lang
 
   return (
     <div>

@@ -1,11 +1,10 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import context from "./context";
 import { usePathname } from "next/navigation";
 
 const ThemeProvider = ({ children }) => {
   const [isExpanded, setIsExpanded] = useState(false);
-
   const [menuStatus, setMenuStatus] = useState(false);
   const [openSearch, setOpenSearch] = useState(false);
   const [openMegaMenu, setOpenMegaMenu] = useState(false);
@@ -13,57 +12,59 @@ const ThemeProvider = ({ children }) => {
 
   const pathname = usePathname();
 
-  const toggleMenu = (value) => {
-    setMenuStatus((preMenuStatus) =>
+  const toggleMenu = useCallback((value) => {
+    setMenuStatus((prev) =>
       value === undefined
-        ? !preMenuStatus
+        ? !prev
         : typeof value === "boolean"
-          ? value
-          : !!value
+        ? value
+        : !!value
     );
-  };
-  const toggleMegaMenu = (value) => {
+  }, []);
 
-    setOpenMegaMenu((preMenuStatus) =>
-      value === undefined
-        ? !preMenuStatus
-        : typeof value === "boolean"
+  const toggleMegaMenu = useCallback((value) => {
+    setOpenMegaMenu((prev) => {
+      const newValue =
+        value === undefined
+          ? !prev
+          : typeof value === "boolean"
           ? value
-          : !!value
-    );
+          : !!value;
 
-    document.body.classList.toggle("megamenu-popup-active", !openMegaMenu);
-  };
+      document.body.classList.toggle("megamenu-popup-active", newValue);
+      return newValue;
+    });
+  }, []);
 
+  const toggleSearch = useCallback(() => {
+    setOpenSearch((prev) => !prev);
+  }, []);
 
-  const toggleSearch = () => {
-    setOpenSearch((preSearch) => !preSearch);
-  };
-  const toggleSidebar = () => {
-    setOpenSidebar((preState) => !preState);
-    document.body.classList.toggle("locked", !openSidebar);
-  };
+  const toggleSidebar = useCallback(() => {
+    setOpenSidebar((prev) => {
+      document.body.classList.toggle("locked", !prev);
+      return !prev;
+    });
+  }, []);
 
-  const handleToggle = () => {
-    setIsExpanded(!isExpanded);
-    document.body.classList.toggle("locked", !isExpanded);
-  };
- /* useEffect(() => {
-   console.log(lang);
-}, [lang]);*/
+  const handleToggle = useCallback(() => {
+    setIsExpanded((prev) => {
+      document.body.classList.toggle("locked", !prev);
+      return !prev;
+    });
+  }, []);
 
-   useEffect(() => {
-	toggleMegaMenu();
-}, [toggleMegaMenu]);
+  useEffect(() => {
+    toggleMegaMenu(false); // ensure closed on mount
+  }, [toggleMegaMenu]);
 
-useEffect(() => {  
+  useEffect(() => {
     toggleMenu(false);
     setIsExpanded(false);
     setOpenMegaMenu(false);
-
     toggleMegaMenu(false);
     document.body.classList.remove("megamenu-popup-active");
-  }, [pathname]);
+  }, [pathname, toggleMenu, toggleMegaMenu]);
 
   const value = {
     handleToggle,
@@ -78,8 +79,9 @@ useEffect(() => {
     openSidebar,
     setOpenSidebar,
     toggleSidebar,
-    setOpenMegaMenu
+    setOpenMegaMenu,
   };
+
   return <context.Provider value={value}>{children}</context.Provider>;
 };
 

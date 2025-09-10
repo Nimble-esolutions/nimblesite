@@ -13,13 +13,14 @@ const teamOneData = {
         {
             id: 1,
             image: image1,
+            
             socials: [
 			{  id: 1, icon: faLinkedin, link: "https://instagram.com", name: "Linkedin"},
 			{  id: 2, icon: faFacebookF, link:"#", des: "fa-angle-double-right"},
             ], title: "Neeta Joshi",
             href: "team-details",
-            designation: "Founder"
-
+            designation: "Founder",
+            description: "Founder & CEO with 20+ years of experience" // <-- add this
 
         },
         {
@@ -29,7 +30,8 @@ const teamOneData = {
                 { id: 1, icon: faLinkedin, link: "https://facebook.com", name: "Facebook", des: "20+ Yrs. of Experience" },
                 ], title: "Kunjika Dhapre",
             href: "team-details",
-            designation: "Technical Head"
+            designation: "Technical Head",
+            description: "Project Manager expert in managing large teams"
 
 
         },
@@ -40,7 +42,8 @@ const teamOneData = {
                 { id: 1, icon: faLinkedin, link: "https://facebook.com", name: "Facebook", des: "20+ Yrs. of Experience" },
                 ], title: "Pradnya Kulkarni",
             href: "team-details",
-            designation: "Project Manager"
+            designation: "Project Manager",
+            description: "Project Manager expert in managing large teams"
 
 
         },
@@ -52,9 +55,10 @@ const teamOneData = {
                 { id: 2, icon: faPinterestP, link: "https://pinterest.com", name: "Pinterest" , des: "20+ Yrs. of Experience" },
                 { id: 3, icon: faTwitter, link: "https://twitter.com", name: "Twitter" },
                 { id: 4, icon: faInstagram, link: "https://instagram.com", name: "Instagram" , des: "20+ Yrs. of Experience"},
-            ], title: "Christine Eve",
+            ], title: "vaishnavi Gokhale",
             href: "team-details",
-            designation: "Founder"
+            designation: "Founder",
+            description: "Project Manager expert in managing large teams"
 
 
         },
@@ -68,7 +72,7 @@ const teamOneData = {
                 { id: 4, icon: faInstagram, link: "https://instagram.com", name: "Instagram" },
             ], title: "David Copers",
             href: "team-details",
-            designation: "Manager"
+            designation: "Manager",description: "Project Manager expert in managing large teams"
 
 
         },
@@ -82,7 +86,8 @@ const teamOneData = {
                 { id: 4, icon: faInstagram, link: "https://instagram.com", name: "Instagram" },
             ], title: "Kevin Martin",
             href: "team-details",
-            designation: "Founder"
+            designation: "Founder",
+            description: "Project Manager expert in managing large teams"
 
 
         }

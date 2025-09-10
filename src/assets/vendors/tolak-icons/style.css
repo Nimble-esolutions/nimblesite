@@ -13,7 +13,6 @@
 [class^="icon-"], [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icomoon' !important;
-  speak: never;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
@@ -135,4 +134,49 @@
 }
 .icon-messages:before {
   content: "\e920";
+}
+
+.team-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.team-card__image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Description centered, hidden by default */
+.team-card__description {
+  position: absolute;
+  top: 50%;                 
+  left: 50%;                
+  transform: translate(-50%, -50%);
+  background: transparent;  
+  color: #fff;               
+  text-align: center;
+  opacity: 0;                
+  transition: opacity 0.3s ease;
+  z-index: 2;
+  max-width: 90%;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* Social icons hidden by default, appear on hover */
+.team-card__social {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  position: absolute;
+  bottom: 10px;           /* adjust as needed */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+}
+
+/* Show description and social icons on hover */
+.team-card:hover .team-card__description,
+.team-card:hover .team-card__social {
+  opacity: 1;
 }

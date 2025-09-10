@@ -40,14 +40,16 @@ const TeamOnePage = ({ titleTwo }) => {
                 <div >
                     <Row className="gutter-y-30">
                         {
-                            carouselData.map(({ id, image, socials, title, href, designation }) =>
+                            carouselData.map(({ id, image, socials, title, href, designation,description }) =>
                                 <Col lg={4} md={6} key={id} >
                                     <div className="team-card wow fadeInUp" data-aos='fade-up' data-wow-duration='1500ms' data-aos-delay='000'>
                                         <div className="team-card__image">
                                             <Image src={image} alt={title} style={{ height: "auto" }} />
+                                            <p className="team-card__description">{description}</p>
                                         </div>
                                         <div className="team-card__content">
                                             <div className="team-card__hover">
+                                                   
                                                 <div className="team-card__social">
                                                     <i className="fa fa-plus"></i>
                                                     <div className="team-card__social__list">
@@ -61,6 +63,7 @@ const TeamOnePage = ({ titleTwo }) => {
 
                                                     </div>
                                                 </div>
+                                                
                                             </div>
                                             <h3 className="team-card__title">
                                                 <Link href={href}>{title}</Link>
