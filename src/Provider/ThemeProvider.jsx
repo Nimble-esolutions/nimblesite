@@ -12,59 +12,57 @@ const ThemeProvider = ({ children }) => {
 
   const pathname = usePathname();
 
-  const toggleMenu = useCallback((value) => {
-    setMenuStatus((prev) =>
+  const toggleMenu = (value) => {
+    setMenuStatus((preMenuStatus) =>
       value === undefined
-        ? !prev
+        ? !preMenuStatus
         : typeof value === "boolean"
-        ? value
-        : !!value
-    );
-  }, []);
-
-  const toggleMegaMenu = useCallback((value) => {
-    setOpenMegaMenu((prev) => {
-      const newValue =
-        value === undefined
-          ? !prev
-          : typeof value === "boolean"
           ? value
-          : !!value;
+          : !!value
+    );
+  };
+  const toggleMegaMenu = (value) => {
 
-      document.body.classList.toggle("megamenu-popup-active", newValue);
-      return newValue;
-    });
-  }, []);
+    setOpenMegaMenu((preMenuStatus) =>
+      value === undefined
+        ? !preMenuStatus
+        : typeof value === "boolean"
+          ? value
+          : !!value
+    );
 
-  const toggleSearch = useCallback(() => {
-    setOpenSearch((prev) => !prev);
-  }, []);
+    document.body.classList.toggle("megamenu-popup-active", !openMegaMenu);
+  };
 
-  const toggleSidebar = useCallback(() => {
-    setOpenSidebar((prev) => {
-      document.body.classList.toggle("locked", !prev);
-      return !prev;
-    });
-  }, []);
 
-  const handleToggle = useCallback(() => {
-    setIsExpanded((prev) => {
-      document.body.classList.toggle("locked", !prev);
-      return !prev;
-    });
-  }, []);
+  const toggleSearch = () => {
+    setOpenSearch((preSearch) => !preSearch);
+  };
+  const toggleSidebar = () => {
+    setOpenSidebar((preState) => !preState);
+    document.body.classList.toggle("locked", !openSidebar);
+  };
 
-  useEffect(() => {
-    toggleMegaMenu(false); // ensure closed on mount
-  }, [toggleMegaMenu]);
+  const handleToggle = () => {
+    setIsExpanded(!isExpanded);
+    document.body.classList.toggle("locked", !isExpanded);
+  };
+ /* useEffect(() => {
+   console.log(lang);
+}, [lang]);*/
 
-  useEffect(() => {
+   useEffect(() => {
+	toggleMegaMenu();
+}, [toggleMegaMenu]);
+
+useEffect(() => {  
     toggleMenu(false);
     setIsExpanded(false);
     setOpenMegaMenu(false);
+
     toggleMegaMenu(false);
     document.body.classList.remove("megamenu-popup-active");
-  }, [pathname, toggleMenu, toggleMegaMenu]);
+  }, [pathname]);
 
   const value = {
     handleToggle,
