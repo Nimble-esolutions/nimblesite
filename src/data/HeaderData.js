@@ -94,70 +94,8 @@ const navItems = [
   {
     id: 2,
     name: "Portfolio",
-    href: "#",
-    subNavItems: [
-      {
-        id: 1,
-        name: "Our Project",
-        href: "/project",
-        dropdown: false,
-        subItems: [
-          {
-            id: 1,
-            name: "Project Page",
-            href: "/project",
-          },
-          {
-            id: 2,
-            name: "Project Carousel",
-            href: "/project-carousel",
-          },
-          {
-            id: 3,
-            name: "Project Details",
-            href: "/project-details",
-          },
-        ],
-      },
-      { id: 2, name: "Our Team", href: "/team" },
-      { id: 3, name: "Team Carousel", href: "/team-carousel" },
-      { id: 4, name: "Team Details", href: "/team-details" },
-      { id: 5, name: "Testimonial", href: "/reviews" },
-      { id: 6, name: "Testimonial Carousel", href: "/reviews-carousel" },
-      { id: 7, name: "Pricing Page", href: "/packages" },
-      { id: 8, name: "Pricing Carousel", href: "/packages-carousel" },
-      {
-        id: 9,
-        name: "Gallery",
-        href: "/gallery",
-        dropdown: false,
-        subItems: [
-          {
-            id: 1,
-            name: "Gallery Masonry",
-            href: "/gallery",
-          },
-          {
-            id: 2,
-            name: "Gallery Filter",
-            href: "/gallery-filter",
-          },
-          {
-            id: 3,
-            name: "Gallery Grid",
-            href: "/gallery-grid",
-          },
-          {
-            id: 4,
-            name: "Gallery Carousel",
-            href: "/gallery-carousel",
-          },
-        ],
-      },
-      { id: 10, name: "FAQs", href: "/faq" },
-      { id: 11, name: "Login", href: "/login" },
-      { id: 12, name: "404 Error", href: "/404" },
-    ],
+    href: "/blog-grid",
+    
   },
   {
     id: 3,
@@ -175,88 +113,9 @@ const navItems = [
     ],
   },
 
-  {
-    id: 5,
-    name: "News",
-    href: "#",
-    subNavItems: [
-      {
-        id: 1,
-        name: "News Grid",
-        href: "#",
-        dropdown: true,
-        subItems: [
-          {
-            id: 1,
-            name: "No Sidebar",
-            href: "/blog-grid",
-          },
-          {
-            id: 2,
-            name: "Left Sidebar",
-            href: "/blog-grid-left",
-          },
-          {
-            id: 3,
-            name: "Right Sidebar",
-            href: "/blog-grid-right",
-          },
-        ],
-      },
-      {
-        id: 2,
-        name: "News List",
-        href: "#",
-        dropdown: true,
-        subItems: [
-          {
-            id: 1,
-            name: "No Sidebar",
-            href: "/blog-list",
-          },
-          {
-            id: 2,
-            name: "Left Sidebar",
-            href: "/blog-list-left",
-          },
-          {
-            id: 3,
-            name: "Right Sidebar",
-            href: "/blog-list-right",
-          },
-        ],
-      },
-      { id: 3, name: "News Carousel", href: "/blog-carousel" },
-      {
-        id: 4,
-        name: "News Details",
-        href: "#",
-        dropdown: true,
-        subItems: [
-          {
-            id: 1,
-            name: "No Sidebar",
-            href: "/blog-details",
-          },
-          {
-            id: 2,
-            name: "Left Sidebar",
-            href: "/blog-details-left",
-          },
-          {
-            id: 3,
-            name: "Right Sidebar",
-            href: "/blog-details-right",
-          },
-        ],
-      },
-    ],
-  },
-  {
-    id: 6,
-    name: "Contact",
-    href: "/contact",
-  },
+  
+ 
+  
 ];
 
 const social = [

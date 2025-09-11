@@ -85,7 +85,7 @@ const HeaderSingleCloned = () => {
               <span></span>
             </Link>
             <Link href='contact' className='tolak-btn main-header__btn'>
-              <b>Discover More</b>
+              <b>Contact Us</b>
               <span></span>
             </Link>
           </div>

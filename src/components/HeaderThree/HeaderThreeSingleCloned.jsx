@@ -50,7 +50,7 @@ const HeaderThreeSingleCloned = () => {
               <span></span>
             </div>
             <a href='contact' className='tolak-btn main-header-three__btn'>
-              <b>Discover More</b>
+              <b>Contact Us</b>
               <span></span>
             </a>
           </div>

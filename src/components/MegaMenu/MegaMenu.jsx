@@ -22,8 +22,8 @@ const MegaMenu = ({ pageTitle }) => {
                 e.preventDefault();
                 toggleMegaMenu(true);
             }}>
-                Homes
-            </Link>
+                Home
+                            </Link>
 
             <ul className={`${openMegaMenu ? 'megamenu-clickable--active' : ""}`}>
                 <li>

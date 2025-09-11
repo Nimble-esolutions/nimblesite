@@ -20,7 +20,7 @@ const page = () => {
         <Layout>
             <HeaderInner />
             <HeaderInnerCloned />
-            <PageHeader title="Prtfolio" subTitle="News Grid" />
+            <PageHeader title="Prtfolio" />
             <BlogThreeGrid />
             <MailTwo />
             <FooterSix />

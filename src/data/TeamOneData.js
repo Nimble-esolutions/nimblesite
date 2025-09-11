@@ -15,8 +15,8 @@ const teamOneData = {
             image: image1,
             
             socials: [
-			{  id: 1, icon: faLinkedin, link: "https://instagram.com", name: "Linkedin"},
-			{  id: 2, icon: faFacebookF, link:"#", des: "fa-angle-double-right"},
+			
+			{  id: 1, icon: faFacebookF, link:"#", des: "fa-angle-double-right"},
             ], title: "Neeta Joshi",
             href: "team-details",
             designation: "Founder",
@@ -27,7 +27,7 @@ const teamOneData = {
             id: 2,
             image: image2,
             socials: [
-                { id: 1, icon: faLinkedin, link: "https://facebook.com", name: "Facebook", des: "20+ Yrs. of Experience" },
+                { id: 1, icon: faFacebookF, link: "https://facebook.com", name: "Facebook", des: "20+ Yrs. of Experience" },
                 ], title: "Kunjika Dhapre",
             href: "team-details",
             designation: "Technical Head",
@@ -39,7 +39,7 @@ const teamOneData = {
             id: 3,
             image: image3,
             socials: [
-                { id: 1, icon: faLinkedin, link: "https://facebook.com", name: "Facebook", des: "20+ Yrs. of Experience" },
+                { id: 1, icon: faFacebookF, link: "https://facebook.com", name: "Facebook", des: "20+ Yrs. of Experience" },
                 ], title: "Pradnya Kulkarni",
             href: "team-details",
             designation: "Project Manager",
@@ -52,9 +52,7 @@ const teamOneData = {
             image: image4,
             socials: [
                 { id: 1, icon: faFacebookF, link: "https://facebook.com", name: "Facebook" , des: "20+ Yrs. of Experience" },
-                { id: 2, icon: faPinterestP, link: "https://pinterest.com", name: "Pinterest" , des: "20+ Yrs. of Experience" },
-                { id: 3, icon: faTwitter, link: "https://twitter.com", name: "Twitter" },
-                { id: 4, icon: faInstagram, link: "https://instagram.com", name: "Instagram" , des: "20+ Yrs. of Experience"},
+                
             ], title: "vaishnavi Gokhale",
             href: "team-details",
             designation: "Founder",
@@ -67,9 +65,7 @@ const teamOneData = {
             image: image5,
             socials: [
                 { id: 1, icon: faFacebookF, link: "https://facebook.com", name: "Facebook" , des: "20+ Yrs. of Experience" },
-                { id: 2, icon: faPinterestP, link: "https://pinterest.com", name: "Pinterest" },
-                { id: 3, icon: faTwitter, link: "https://twitter.com", name: "Twitter" },
-                { id: 4, icon: faInstagram, link: "https://instagram.com", name: "Instagram" },
+                
             ], title: "David Copers",
             href: "team-details",
             designation: "Manager",description: "Project Manager expert in managing large teams"
@@ -81,9 +77,7 @@ const teamOneData = {
             image: image6,
             socials: [
                 { id: 1, icon: faFacebookF, link: "https://facebook.com", name: "Facebook" , des: "20+ Yrs. of Experience"},
-                { id: 2, icon: faPinterestP, link: "https://pinterest.com", name: "Pinterest" },
-                { id: 3, icon: faTwitter, link: "https://twitter.com", name: "Twitter" },
-                { id: 4, icon: faInstagram, link: "https://instagram.com", name: "Instagram" },
+                
             ], title: "Kevin Martin",
             href: "team-details",
             designation: "Founder",

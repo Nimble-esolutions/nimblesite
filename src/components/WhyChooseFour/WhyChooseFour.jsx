@@ -46,7 +46,14 @@ const WhyChooseFour = () => {
                     <Col xl={6}>
                         <div ref={(el) => (elementsRef.current[0] = el)} className="tolak-stretch-element-inside-column">
                             <div className="why-choose-four__image wow slideInRight" data-aos='fade-up'>
-                                <Image src={bgImage} alt="Why Choose Us" />
+                                <Image
+                                src={bgImage}
+                                alt="Why Choose Us"
+                                width={600}       // set appropriate width
+                                height={600}      // set appropriate height or ratio
+                                style={{ objectFit: 'cover', width: '100%', height: '100%' }}
+                                quality={100}     // prevent compression
+                            />
                             </div>
                         </div>
                     </Col>
